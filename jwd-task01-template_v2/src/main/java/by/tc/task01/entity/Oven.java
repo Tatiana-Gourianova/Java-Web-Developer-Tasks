@@ -118,31 +118,7 @@ public class Oven extends Appliance {
                 Float.compare(oven.Height, Height) == 0 &&
                 Float.compare(oven.Width, Width) == 0;
     }
-/*
-   // @Override
-    public int hashCode(Appliance appliance) {
-        Oven oven = (Oven) appliance;
-         String  str = this.toString();
-         return str.hashCode();
-                //Objects.hash(PowerConsumption, Weight, Capacity, Depth, Height, Width);
-    }
-*/
-    public boolean Equals(Appliance appliance) {
-        Oven oven = (Oven) appliance;
-System.out.println(oven.Width);
-        System.out.println(this.Width);
-        //if (appliance.type==AppliancesType.OVEN)
-        boolean isEquals=false;
-        if(
-                ((this.PowerConsumption==oven.PowerConsumption)||(oven.PowerConsumption==0)||(this.PowerConsumption==0))&&
-                        ((this.Weight==oven.Weight)||(oven.Weight==0)||(this.Weight==0))&&
-                        ((this.Capacity==oven.Capacity)||(oven.Capacity==0)||(this.Capacity==0))&&
-                        ((this.Depth==oven.Depth)||(oven.Depth==0)||(this.Depth==0))&&
-                        ((this.Height==oven.Height)||(oven.Height==0)||(this.Height==0))&&
-                        ((this.Width==oven.Width)||(oven.Width==0)||(this.Width==0)))
-        {isEquals=true;}
-        return isEquals;
-    }
+
 
 
 

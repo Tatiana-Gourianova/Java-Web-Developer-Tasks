@@ -90,7 +90,7 @@ public class Main {
 		Oven oven = new Oven(Integer.valueOf((String)A), Float.valueOf((String)v),
 				Float.valueOf((String)v2), Float.valueOf((String)v3), Float.valueOf((String)v4), Float.valueOf((String)v5));
 
-		System.out.println(oven.Equals(oven1));
+		System.out.println(oven.equals(oven2));
 		//equals(oven2.toString(),oven1.toString()));
 		System.out.println(oven.hashCode());
 		System.out.println(oven1.hashCode());

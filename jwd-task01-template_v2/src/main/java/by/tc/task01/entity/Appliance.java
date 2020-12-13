@@ -1,7 +1,7 @@
 package by.tc.task01.entity;
 
 
-public abstract class Appliance implements Equals {
+public abstract class Appliance {
 //    public AppliancesType type;
 
     public void Appliance() {
