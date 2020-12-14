@@ -1,14 +1,21 @@
 package by.tc.task01.entity;
 
 
-public abstract class Appliance implements Equals {
-//    public AppliancesType type;
+public abstract class Appliance {
 
+public enum ApplianceType {
+    OVEN,
+    LAPTOP,
+    REFRIGERATOR,
+    SPEAKERS,
+    TABLET_PC,
+    VACUUM_CLEANER
+}
     public void Appliance() {
 
     }
 
-    public Appliance(AppliancesType apppliancesType, Integer countOfParams) {
+    public Appliance(ApplianceType appplianceType, Integer countOfParams) {
         //this.type=apppliancesType;
 
     }

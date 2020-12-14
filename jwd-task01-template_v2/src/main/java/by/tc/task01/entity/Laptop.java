@@ -1,20 +1,19 @@
 package by.tc.task01.entity;
 
+
 public class Laptop extends Appliance{
-    private float BatteryCapacity;
+    private int BatteryCapacity;
     private int OS ;
     private int MemoryRom ;
     private int SystemMemory;
     private float CPU;
     private int DisplayInchs;
 
-    //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-    //  public Laptop(){
-    //   super(ApppliancesType.LAPTOP, 6);
-   //}
-
-    public Laptop(float batteryCapacity, int os, int memoryRom, int systemMemory, float cpu, int displayInchs){
-        super(AppliancesType.LAPTOP, 6);
+    public Laptop() {
+        super(ApplianceType.LAPTOP, 0);
+    }
+    public Laptop(int batteryCapacity, int os, int memoryRom, int systemMemory, float cpu, int displayInchs){
+        super(ApplianceType.LAPTOP, 6);
     setBatteryCapacity(batteryCapacity);
     setOS(os);
     setMemoryRom(memoryRom);
@@ -23,8 +22,8 @@ public class Laptop extends Appliance{
     setDisplayInchs(displayInchs);
 }
 
-public void setBatteryCapacity(float batteryCapacity){ this.BatteryCapacity=batteryCapacity; }
-public float getBatteryCapacity(){  return this.BatteryCapacity;}
+public void setBatteryCapacity(int batteryCapacity){ this.BatteryCapacity=batteryCapacity; }
+public int getBatteryCapacity(){  return this.BatteryCapacity;}
 public void setOS(int os){ this.OS=os;}
 public int getOS(){ return this.OS;}
 public void setMemoryRom(int memoryRom){this.MemoryRom=memoryRom;}
@@ -49,24 +48,18 @@ public int getDisplayInchs(){return this.DisplayInchs;}
     }
 
 
-    public boolean Equals(Appliance appliance) {
-        Laptop laptop = (Laptop) appliance;
-
-        return true;
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Laptop)) return false;
+        Laptop laptop = (Laptop) o;
+        return BatteryCapacity == laptop.BatteryCapacity &&
+                Float.compare(laptop.OS, OS) == 0 &&
+                Float.compare(laptop.MemoryRom, MemoryRom) == 0 &&
+                Float.compare(laptop.SystemMemory, SystemMemory) == 0 &&
+                Float.compare(laptop.CPU, CPU) == 0 &&
+                Float.compare(laptop.DisplayInchs, DisplayInchs) == 0;
     }
-
-
-     /*   if(
-                ((this.PowerConsumption==oven.PowerConsumption)||(oven.PowerConsumption==0)||(this.PowerConsumption==0))&&
-                        ((this.Weight==oven.Weight)||(oven.Weight==0)||(this.Weight==0))&&
-                        ((this.Capacity==oven.Capacity)||(oven.Capacity==0)||(this.Capacity==0))&&
-                        ((this.Depth==oven.Depth)||(oven.Depth==0)||(this.Depth==0))&&
-                        ((this.Height==oven.Height)||(oven.Height==0)||(this.Height==0))&&
-                        ((this.Weight==oven.Height)||(oven.Width==0)||(this.Width==0)))
-        {isEquals=true;}
-
-      */
-
 
 }
 
