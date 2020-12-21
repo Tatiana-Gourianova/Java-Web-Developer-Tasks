@@ -11,9 +11,9 @@ public class PrintApplianceInfo {
 if (appliance!=null) {
 	System.out.println(appliance.toString());}
 else
-	{ System.out.println("Not found");}
+	{ System.out.println("null");}
 		
-	}
+}
 	
 
 

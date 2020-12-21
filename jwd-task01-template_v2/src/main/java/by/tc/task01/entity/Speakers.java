@@ -1,9 +1,11 @@
 package by.tc.task01.entity;
 
+import java.io.Serializable;
+
 import static by.tc.task01.entity.Appliance.ApplianceType.SPEAKERS;
 
 
-public class Speakers extends Appliance{
+public class Speakers extends Appliance implements Serializable {
 
     private int PowerConsumption;
     private int NumberOfSpeakers;
@@ -12,11 +14,12 @@ public class Speakers extends Appliance{
 
 
     public Speakers(){
-        super(SPEAKERS,0);
+        super();
+
     }
 
     public Speakers(int powerConsumption, int numberOfSpeakers, String frequencyRange, float cordLength) {
-        super(SPEAKERS, 4);
+        super();
         setPowerConsumption(powerConsumption);
         setNumberOfSpeakers(numberOfSpeakers);
         setFrequencyRange(frequencyRange);

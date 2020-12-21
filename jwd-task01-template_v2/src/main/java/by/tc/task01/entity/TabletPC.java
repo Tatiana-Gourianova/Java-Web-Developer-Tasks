@@ -1,6 +1,8 @@
 package by.tc.task01.entity;
 
-public class TabletPC extends Appliance{
+import java.io.Serializable;
+
+public class TabletPC extends Appliance implements Serializable {
     private int BatteryCapacity;
     private int DisplayInchs;
     private int MemoryRom ;
@@ -8,14 +10,11 @@ public class TabletPC extends Appliance{
     private String Color;
 
 
-    public TabletPC() {
-        //Integer b=3;
-        super(ApplianceType.TABLET_PC, 0);
-    }
+    public TabletPC() {     super();    }
 
 
     public TabletPC(int batteryCapacity, int displayInchs,  int memoryRom, int flashMemoryCapacity, String color){
-        super(ApplianceType.TABLET_PC, 5);
+        super();
         setBatteryCapacity(batteryCapacity);
         setDisplayInchs(displayInchs);
         setMemoryRom(memoryRom);

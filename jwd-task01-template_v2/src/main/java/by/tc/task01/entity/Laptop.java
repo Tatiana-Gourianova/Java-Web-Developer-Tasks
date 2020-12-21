@@ -1,7 +1,9 @@
 package by.tc.task01.entity;
 
 
-public class Laptop extends Appliance{
+import java.io.Serializable;
+
+public class Laptop extends Appliance implements Serializable {
     private int BatteryCapacity;
     private int OS ;
     private int MemoryRom ;
@@ -9,11 +11,10 @@ public class Laptop extends Appliance{
     private float CPU;
     private int DisplayInchs;
 
-    public Laptop() {
-        super(ApplianceType.LAPTOP, 0);
-    }
+    public Laptop() {super(); }
     public Laptop(int batteryCapacity, int os, int memoryRom, int systemMemory, float cpu, int displayInchs){
-        super(ApplianceType.LAPTOP, 6);
+        super();
+
     setBatteryCapacity(batteryCapacity);
     setOS(os);
     setMemoryRom(memoryRom);

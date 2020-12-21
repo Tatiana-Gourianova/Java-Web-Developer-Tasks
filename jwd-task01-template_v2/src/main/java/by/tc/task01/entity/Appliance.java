@@ -1,108 +1,45 @@
 package by.tc.task01.entity;
 
+import java.util.Objects;
 
 public abstract class Appliance {
 
-public enum ApplianceType {
-    OVEN,
-    LAPTOP,
-    REFRIGERATOR,
-    SPEAKERS,
-    TABLET_PC,
-    VACUUM_CLEANER
+    public enum ApplianceType {
+        OVEN,
+        LAPTOP,
+        REFRIGERATOR,
+        SPEAKERS,
+        TABLET_PC,
+        VACUUM_CLEANER
+    }
+
+    protected long id;
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public Appliance() {
+    }
+
+    public Appliance(long id) {
+        this.id = id;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Appliance appliance = (Appliance) o;
+        return id == appliance.id;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id);
+    }
 }
-    public void Appliance() {
-
-    }
-
-    public Appliance(ApplianceType appplianceType, Integer countOfParams) {
-        //this.type=apppliancesType;
-
-    }
-}
-  //  public abstract boolean equals(Oven oven2);
-
-
-//public abstract boolean Equals(Appliance appliance)
-
-    /*
-    public Appliance Appliance(Object... params) {
-        Appliance appliance = null;
-        ApppliancesType type = (ApppliancesType) params[0];
-
-        //Integer.valueOf((String) object);
-
-        switch (type) {
-            case OVEN:
-       //         appliance = new Oven(Integer.valueOf((String) params[1]),
-         //               Float.valueOf((String) params[2]),
-           //             Float.valueOf((String) params[3]),
-             //           Float.valueOf((String) params[4]),
-               //         Float.valueOf((String) params[5]),
-                 //       Float.valueOf((String) params[6]));
-                break;
-
-            case LAPTOP:
-                break;
-            case REFRIGERATOR:
-                break;
-            case SPEAKERS:
-                break;
-            case TABLET_PC:
-                break;
-            case VACUUM_CLEANER:
-                break;
-            default:
-                throw new IllegalArgumentException("Wrong equipment type:" + type);
-        }
-        return appliance;
-    }
-
-}
-
-   /* public Appliance(int powerConsumption, float weight, float capacity, float depth, float height, float width) {
-    }
-
-    public Appliance(ApppliancesType oven, int powerConsumption, float weight, float capacity, float depth, float width) {
-    }
-
-    public Appliance(ApppliancesType laptop, float batteryCapacity, int os, int memoryRom, int systemMemory, float cpu, int displayInchs) {
-    }
-
-
-    //public Appliance (int powerConsumption, float weight, float capacity, float depth, float height, float width){}
-
-    public Appliance Appliance(Object... params) {
-        Appliance appliance =null;
-         ApppliancesType type= (ApppliancesType)params[0];
-
- //Integer.valueOf((String) object);
-
-        switch (type) {
-            case OVEN:
-                appliance = new Oven( Integer.valueOf((String)params[1]),
-                        Float.valueOf((String)params[2]),
-                        Float.valueOf((String)params[3]),
-                        Float.valueOf((String)params[4]),
-                        Float.valueOf((String)params[5]),
-                        Float.valueOf((String)params[6]));
-                break;
-
-            case LAPTOP:
-                break;
-            case REFRIGERATOR:
-                break;
-            case SPEAKERS:
-                break;
-            case TABLET_PC:
-                break;
-            case VACUUM_CLEANER:
-                break;
-            default:
-                throw new IllegalArgumentException("Wrong equipment type:" + type);
-        }
-        return appliance;
-    }
-*/
-
-

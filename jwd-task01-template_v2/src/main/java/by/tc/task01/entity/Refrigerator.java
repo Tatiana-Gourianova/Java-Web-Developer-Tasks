@@ -1,7 +1,9 @@
 package by.tc.task01.entity;
 
 
-public class Refrigerator extends Appliance{
+import java.io.Serializable;
+
+public class Refrigerator extends Appliance implements Serializable {
 	private int PowerConsumption;
 	private float Weight;
 	private int FreezerCapacity;
@@ -11,15 +13,11 @@ public class Refrigerator extends Appliance{
 
 
 
-	public Refrigerator() {
-	    super(ApplianceType.REFRIGERATOR,0);
-
-
-	}
+	public Refrigerator() {	 	super();	}
 
 
 	public Refrigerator(int powerConsumption, float weight, int freezerCapacity, int overallCapacity, float height, float width) {
-		super(ApplianceType.REFRIGERATOR,6);
+		super();
 		setPowerConsumption(powerConsumption);
 		setWeight(weight);
 		setFreezerCapacity(freezerCapacity);

@@ -6,10 +6,13 @@ public class Validator {
 	
 	public static boolean criteriaValidator(Criteria criteria) {
 		// you may add your own code here
-		
-		return true;
+		boolean isValid=true;
+		if ((criteria.getGroupSearchName()==null)&&(criteria.getCritaria()==null))
+			isValid=false;
+
+		return isValid;
 	}
 
 }
 
-//you may add your own new classes
+

@@ -1,26 +1,33 @@
 package by.tc.task01.entity;
 
-//import java.util.Objects;
+import java.io.Serializable;
 
-//import static java.util.Objects.hash;
 
-public class Oven extends Appliance {
-    private int PowerConsumption;
-    private float Weight;
-    private float Capacity;
-    private float Depth;
-    private float Height;
-    private float Width;
+public class Oven extends Appliance implements Serializable {
+ private int PowerConsumption;
+ private float Weight;
+ private float Capacity;
+ private float Depth;
+ private float Height;
+ private float Width;
+/* protected long id;
+
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+*/
 
 
     public Oven()
-    {super(ApplianceType.OVEN,0);
-        this.PowerConsumption=0;
-        this.Weight=0;
-        this.Capacity=0;
-    }
+    {super();    }
     public Oven(int powerConsumption, float weight, float capacity, float depth, float height, float width) {
-    super(ApplianceType.OVEN,6);
+        super();
+        //super(ApplianceType.OVEN,6);
       setPowerConsumption(powerConsumption);
       setWeight(weight);
       setCapacity(capacity);
@@ -29,6 +36,7 @@ public class Oven extends Appliance {
       setWidth(width);
 
     }
+
 
 
 
