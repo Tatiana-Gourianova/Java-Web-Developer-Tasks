@@ -35,13 +35,13 @@ public class ApplianceParse {
             map = Arrays.stream(line.split(","))
                     .map(s -> s.split("", 2))
                     .collect(Collectors.toMap(a -> a[0], a -> a.length > 1 ? a[1] : ""));
-            System.out.println("&&"+map);
+
             parsedAppilianceData.add(map.toString());
             for (int i=0;i< map.size();i++){
             String[] words = parsedAppilianceData.toArray()[i].toString().split(",");
             for (String word : words) {
                 if (word.trim().equalsIgnoreCase(groupSearchName)) {
-                    // System.out.println(word);
+
                     for (int j = 0; j < words.length; j++)
                         parsedAppilianceData.add(words[j]);
 
@@ -52,7 +52,7 @@ public class ApplianceParse {
 
         }
 
-        System.out.println("$$$"+groupSearchName+parsedAppilianceData);
+       // System.out.println("$$$"+groupSearchName+parsedAppilianceData);
         return parsedAppilianceData;
     }
 }

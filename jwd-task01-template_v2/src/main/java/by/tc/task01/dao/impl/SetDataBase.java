@@ -16,14 +16,6 @@ public class SetDataBase {
 
 
             List<String> allLines = readFromFile.takeAll();
-           // for (java.lang.String line : allLines) {
-                //System.out.println(line+"!@!@");
-
-
-
-
-            //}
-
 
             ExchangeDB db = new ExchangeDB();
             db.createTablesAndForeignKeys();

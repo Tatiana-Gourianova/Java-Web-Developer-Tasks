@@ -26,7 +26,7 @@ public class ApplianceDAOImpl implements ApplianceDAO {
 
 			///*	List<String> applianceData=A_DB.GetDataBase();
 			for (java.lang.String line : applianceData) {
-				System.out.println(line+"!@!@!");
+				System.out.println(line+"!!!");
 			}
 			ApplianceFilter applianceFilter = new ApplianceFilter();
 			List<String> filtredApplianceData = applianceFilter.filter();

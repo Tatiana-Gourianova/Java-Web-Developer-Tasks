@@ -54,7 +54,7 @@ public class ExchangeDB {
             oven=new Oven();
 
             laptop=new Laptop();
-            System.out.println("Создана таблица "+laptop.toString());
+           // System.out.println("Создана таблица "+laptop.toString());
             refrigerator=new Refrigerator();
             speakers=new Speakers();
 

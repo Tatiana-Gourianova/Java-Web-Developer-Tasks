@@ -42,11 +42,6 @@ public class Criteria {
 		criteria.remove(searchCriteria, value);
 	}
 
-//	public boolean equal(String searchCriteria, Object value) {
-// 	return criteria.equals(searchCriteria);
-// }
-
-//	public String find (SearchCriteria searchCriteria ) {
 
 	public String find (String searchCriteria, float value ) {
 
@@ -62,7 +57,7 @@ public class Criteria {
 	}
 	public boolean find (String searchCriteria, String value ) {
 
-		//String mapEntryWithID = null;
+
 boolean isfound=false;
 		if (criteria.containsKey(searchCriteria)) {
 
