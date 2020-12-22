@@ -1,0 +1,17 @@
+1( public class PrintApplianceInfo {
+
+
+	public static void print(Appliance appliance) {
+	System.out.println(appliance.toString());} //переписать, чтобы были пробелы между полями appliance
+2) 
+public class ApplianceServiceImpl implements ApplianceService{
+
+//!!!!	SetDataBase A_DB = new SetDataBase(readFromFile); Дописать заполнение sql таблиц и поиск с помощью sql запросов
+понять, почему дублируется создание таблиц
+
+3) подчистить лямбда функцию, чтобы лишнее равно убрать
+(и по коду пройтись в билдере - там лишнее убирается). или не трогать
+
+4) поиск не в первой группе через компаратор? = искать группу аплианс и в ней из билдера прайвит int вызывать
+
+5) вообще-то билд должен объект апплианс создавать, а не только в списке искать и порядковый номер определять
