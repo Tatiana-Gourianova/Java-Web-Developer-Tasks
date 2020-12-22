@@ -8,18 +8,34 @@ import by.tc.task01.service.validation.Validator;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 
 public class ApplianceServiceImpl implements ApplianceService{
 
+	public static final Comparator<Appliance> COMPARE_BY_COUNT = new Comparator<Appliance>() {
+
+		@Override
+		public int compare(Appliance lA, Appliance rA) {
+			return (int) (lA.getId() - rA.getId());
+		}
+
+
+		public int compare(List<String> o1, List<String> o2) {
+
+			//
+			return 0;
+		}
+	};
 
 	@Override
 	public Appliance find (Criteria criteria)throws SQLException, ClassNotFoundException {
 
-		Appliance appliance=null;
+		Appliance appliance = null;
 		if (!Validator.criteriaValidator(criteria)) {
 			return null;
 		} else {
+
 
 			ApplianceReader applianceReader = new ApplianceReader();
 
@@ -28,10 +44,13 @@ public class ApplianceServiceImpl implements ApplianceService{
 			String file = "appliances_db.txt";
 
 			ApplianceReader readFromFile = new ApplianceReader(path, file);
-			SetDataBase A_DB = new SetDataBase(readFromFile);
+		//	SetDataBase A_DB = new SetDataBase(readFromFile); Дописать заполнение sql таблиц и поиск с помощью sql запросов
 			List<String> applianceData = applianceReader.takeAll();
 
-			applianceData=new ApplianceParse().parse(applianceData);
+			//List<Appliance> findedAppliances=new ArrayList<>();
+   			//findedAppliances.add(new Oven());
+
+			applianceData = new ApplianceParse().parse(applianceData);
 
 
 			ApplianceFilter applianceFilter = new ApplianceFilter();
@@ -39,25 +58,20 @@ public class ApplianceServiceImpl implements ApplianceService{
 			ApplianceBuilder applianceBuilder = new ApplianceBuilder();
 
 
+			applianceBuilder.build(new ApplianceParse().parse(filtredApplianceData, criteria.getGroupSearchName()), criteria);
+
+			ArrayList<String> foundAppliances = new ArrayList<String>();
 
 
-			int[] index=applianceBuilder.build(new ApplianceParse().parse(filtredApplianceData,criteria.getGroupSearchName()),criteria);
-
-			ArrayList<String> foundAppliance = new ArrayList<String>();
+		//	public static final Comparator<Appliance> COMPARE_BY_COUNT = new Comparator<Appliance>() {
+ 	    //ArrayList<String> foundAppliance
 
 			String[] Appliances = applianceData.toArray(new String[filtredApplianceData.size()]);
-
-			for (int i=0;i<index.length;i++) {
-				if (index[i]!=0) {
-				System.out.println("found "+Appliances[index[i]]);
-				foundAppliance.add(Appliances[index[i]]);
-			}
-}
-
-
-
-
-				}
-	return appliance;
+			System.out.println("found: "+Appliances[applianceBuilder.getApplianceNumberinGroup()]);
+			foundAppliances.add(Appliances[applianceBuilder.getApplianceNumberinGroup()]);
 		}
-}
+				return appliance;
+		}
+
+
+	}

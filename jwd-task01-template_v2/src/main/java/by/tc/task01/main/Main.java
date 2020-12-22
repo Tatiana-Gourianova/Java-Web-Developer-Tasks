@@ -33,14 +33,14 @@ public class Main {
 
 		//System.out.println(MySQLQueryGenerator.generateCreateTableQuery(Person.class));
 		Appliance appliance;
-		criteriaOven.add(SearchCriteria.Oven.CAPACITY.toString(), 3);
-		criteriaOven.add(SearchCriteria.Oven.DEPTH.toString(), 3);
+		criteriaOven.add(SearchCriteria.Oven.CAPACITY.toString(), 32);
+		criteriaOven.add(SearchCriteria.Oven.DEPTH.toString(), 60);
 
 		/************************************/
-		criteriaOven.add(SearchCriteria.Oven.HEIGHT.toString(), 3);
-		criteriaOven.add(SearchCriteria.Oven.POWER_CONSUMPTION.toString(), 3);
+		criteriaOven.add(SearchCriteria.Oven.HEIGHT.toString(), 45.5);
+		criteriaOven.add(SearchCriteria.Oven.POWER_CONSUMPTION.toString(), 1000);
 		criteriaOven.print();
-		criteriaOven.delete(SearchCriteria.Oven.CAPACITY.toString(), 3);
+		criteriaOven.delete(SearchCriteria.Oven.CAPACITY.toString(), 32);
 
 
 
