@@ -46,9 +46,9 @@ public class ExchangeDB {
 
 
             // Инициализируем таблицы
-            //Connection connection =   DriverManager.getConnection(DB_URL);
+            Connection connection =   DriverManager.getConnection(DB_URL);
 
-            //System.out.println("Создана таблица " + statement.getClass().toString());
+            System.out.println("!!!Создана таблица " + connection.getClass().toString());
              //*/
 
             oven=new Oven();

@@ -3,8 +3,6 @@ package by.tc.task01.main;
 
 
 
-import by.tc.task01.dao.impl.ApplianceReader;
-import by.tc.task01.dao.impl.SetDataBase;
 import by.tc.task01.entity.Appliance;
 import by.tc.task01.entity.Oven;
 
@@ -45,7 +43,7 @@ public class Main {
 
 
 
-		criteriaOven.print();
+	//	criteriaOven.print();
 		/************************************/
 		appliance = service.find(criteriaOven);
 
@@ -64,13 +62,13 @@ public class Main {
 		/////////////////////////////////////////////////////////////////
 		//
 
-
+		//Criteria criteriaTabletPC = new Criteria(Oven.class.getSimpleName());
 		Criteria criteriaTabletPC = new Criteria(TabletPC.class.getSimpleName());
 		criteriaTabletPC.add(SearchCriteria.TabletPC.COLOR.toString(), "BLUE");
 		criteriaTabletPC.add(SearchCriteria.TabletPC.DISPLAY_INCHES.toString(), 14);
 		criteriaTabletPC.add(SearchCriteria.TabletPC.MEMORY_ROM.toString(), 8000);
 
-		appliance = service.find(criteriaOven);// find(Object...obj)
+		appliance = service.find(criteriaTabletPC);// find(Object...obj)
 
 		PrintApplianceInfo.print(appliance);
 

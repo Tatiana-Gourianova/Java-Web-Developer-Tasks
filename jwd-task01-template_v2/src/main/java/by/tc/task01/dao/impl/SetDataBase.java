@@ -31,7 +31,7 @@ public class SetDataBase {
                 sql = "INSERT INTO speakers_table ( PowerConsumption, NumberOfSpeakers, FrequencyRange,CordLength) VALUES (443,3,4,5)";
                 rowsAffected = rowsAffected + statement.executeUpdate(sql);
                 System.out.println(rowsAffected + "!?!!");
-                connection.close();
+           //     connection.close();
             } catch (SQLException throwables) {
                 throwables.printStackTrace();
             }

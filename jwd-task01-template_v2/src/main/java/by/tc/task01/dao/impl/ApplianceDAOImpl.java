@@ -1,52 +1,80 @@
 package by.tc.task01.dao.impl;
 
 import by.tc.task01.dao.ApplianceDAO;
+import by.tc.task01.dao.ApplianceFactory;
+import by.tc.task01.dao.DAOFactory;
 import by.tc.task01.entity.Appliance;
 import by.tc.task01.entity.criteria.Criteria;
 
-import java.sql.SQLException;
+import java.io.File;
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Scanner;
 
 public class ApplianceDAOImpl implements ApplianceDAO {
 
+
+
 	@Override
-	public List<Appliance> find(Criteria criteria) {
+	public Appliance find(Criteria criteria) {
+		Appliance result = null;
 
-//	public List<Appliance> find(Criteria criteria) throws SQLException, ClassNotFoundException {
+/*
+		File file = new File("src\\main\\resources\\appliances_db.txt");
 
-/*			ApplianceReader applianceReader=new ApplianceReader();
+		try (Scanner scanner = new Scanner(file)) {
+			while (scanner.hasNextLine()) {
+				String line = scanner.nextLine();
+				String[] colums = null;
 
+				if (!line.isEmpty())
+					colums = line.split(" : ");
 
-			String path = "E:\\new_doc\\Java\\JavaWebDeveloper\\ElectronicsFactory\\src\\by\\epam\\task02\\electronics\\controllers\\";
-			String file="appliances_db.txt";
+				if (colums[0].compareTo(criteria.getGroupSearchName()) != 0) {
+					continue;
+				}
 
-			ApplianceReader  readFromFile=new ApplianceReader(path,file);
-			SetDataBase A_DB =new SetDataBase(readFromFile);
-			List<String> applianceData=applianceReader.takeAll();
+				HashMap<String, String> searchMap = new HashMap<String, String>();
 
-			///*	List<String> applianceData=A_DB.GetDataBase();
-			for (java.lang.String line : applianceData) {
-				System.out.println(line+"!!!");
+				String[] params = colums[1].split(", ");
+
+				for (int i = 0; i < params.length; i++) {
+					String paramsValues[] = params[i].split("=");
+
+					for (int j = 0; j < paramsValues.length; j += 2) {
+						searchMap.put(paramsValues[j], paramsValues[j + 1]);
+					}
+				}
+
+				boolean found = true;
+
+				for (HashMap.Entry<String, Object> criteriaEntry : criteria.getCritaria().entrySet()) {
+					if (!(searchMap.containsKey(criteriaEntry.getKey()) && searchMap.get(criteriaEntry.getKey()).equals(criteriaEntry.getValue())))
+						found = false;
+
+				}
+
+				if (found) {
+					ApplianceFactory applianceFactory = new ApplianceFactory();
+					ArrayList<String> parameters = new ArrayList<String>();
+
+					for (int i = 0; i < params.length; i++) {
+						String paramsValues[] = params[i].split("=");
+
+						for (int j = 1; j < paramsValues.length; j += 2) {
+							parameters.add(paramsValues[j]);
+						}
+					}
+
+					result = applianceFactory.create(criteria.getGroupSearchName(), parameters);
+					return result;
+				}
 			}
-			ApplianceFilter applianceFilter = new ApplianceFilter();
-			List<String> filtredApplianceData = applianceFilter.filter();
-			ApplianceBuilder applianceBuilder=new ApplianceBuilder();
-			List<Appliance>appliances=applianceBuilder.build(new ApplianceParse().parse(filtredApplianceData));
-
-
-
-
-			return appliances;
-		*/
-		return  null;}
-
-
-
-
-
-
+		} catch (Exception ex) {
+			ex.getMessage();
+		}
+*/
+		return result;
+	}
 }
-
-
-
-

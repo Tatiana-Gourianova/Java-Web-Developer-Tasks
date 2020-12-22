@@ -5,9 +5,9 @@ import java.io.Serializable;
 
 public class Oven extends Appliance implements Serializable {
  private int PowerConsumption;
- private float Weight;
- private float Capacity;
- private float Depth;
+ private int Weight;
+ private int Capacity;
+ private int Depth;
  private float Height;
  private float Width;
 /* protected long id;
@@ -24,9 +24,10 @@ public class Oven extends Appliance implements Serializable {
 
 
     public Oven()
-    {super();    }
-    public Oven(int powerConsumption, float weight, float capacity, float depth, float height, float width) {
-        super();
+    {super(); }
+
+    public Oven(int powerConsumption, int weight, int capacity, int depth, float height, float width) {
+     //   super();
         //super(ApplianceType.OVEN,6);
       setPowerConsumption(powerConsumption);
       setWeight(weight);
@@ -49,7 +50,7 @@ public class Oven extends Appliance implements Serializable {
         return this.PowerConsumption;
     }
 
-    public void setWeight(float weight) {
+    public void setWeight(int weight) {
         this.Weight = weight;
     }
 
@@ -57,7 +58,7 @@ public class Oven extends Appliance implements Serializable {
         return this.Weight;
     }
 
-    public void setCapacity(float capacity) {
+    public void setCapacity(int capacity) {
         this.Capacity = capacity;
     }
 
@@ -66,7 +67,7 @@ public class Oven extends Appliance implements Serializable {
         return this.Capacity;
     }
 
-    public void setDepth(float depth) {
+    public void setDepth(int depth) {
 
         this.Depth = depth;
     }

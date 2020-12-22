@@ -7,5 +7,5 @@ import java.sql.SQLException;
 import java.util.List;
 
 public interface ApplianceDAO {
-	List<Appliance> find(Criteria criteria) throws SQLException, ClassNotFoundException;
+	Appliance find(Criteria criteria) throws SQLException, ClassNotFoundException;
 }
