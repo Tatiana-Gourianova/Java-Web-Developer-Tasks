@@ -1,0 +1,5 @@
+1( public class PrintApplianceInfo {
+
+
+	public static void print(Appliance appliance) {
+	System.out.println(appliance.toString());} //переписать, чтобы были пробелы между полями appliance

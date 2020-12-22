@@ -13,7 +13,7 @@ import java.util.List;
 public class ApplianceServiceImpl implements ApplianceService{
 
 
-	@Override
+	//@Override
 	public Appliance find (Criteria criteria)throws SQLException, ClassNotFoundException {
 
 		Appliance appliance=null;
